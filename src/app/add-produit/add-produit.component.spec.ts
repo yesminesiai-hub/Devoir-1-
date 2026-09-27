@@ -1,23 +1,39 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+<div class="container">
+    <div>
+      <h2>Ajouter un Produit :</h2>             
+    </div>
+         <form > 
+         
+             <div class="col-sm-2 col-md-2 col-lg-2">
+               <label >ID  Produit</label>
+               <input   type="text"  [(ngModel)]="newProduit.idProduit"  
+                   name="idProduit" class="form-control">
+              </div>
+         
+             <div class="col-sm-4 col-md-4 col-lg-4" >
+               <label >Nom Produit</label>
+               <input  type="text"[(ngModel)]= "newProduit.nomProduit"  
+                   name="nomProduit" class="form-control">
+             </div>
 
-import { AddProduitComponent } from './add-produit.component';
+             <div class="col-sm-2 col-md-2 col-lg-2">
+               <label >Prix Produit</label>
+               <input type="number"   [(ngModel)]= "newProduit.prixProduit"  
+                   name="prixProduit" class="form-control">
+             </div>
 
-describe('AddProduitComponent', () => {
-  let component: AddProduitComponent;
-  let fixture: ComponentFixture<AddProduitComponent>;
+             <div class="col-sm-4 col-md-4 col-lg-4">
+                 <label >Date création</label>
+                 <input type="date"  [(ngModel)]= "newProduit.dateCreation" 
+                     name="dateCreation" class="form-control">
+             </div>
+              
+       <div class="mt-2">
+  <button type="submit" (click)="addProduit()"class="btn btn-success">Ajouter</button>
+       </div>   
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AddProduitComponent]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(AddProduitComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+       <div class="mt-2">
+        <h3>{{message}}</h3>
+             </div>   
+         </form>
+</div>       
